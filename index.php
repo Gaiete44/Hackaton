@@ -33,11 +33,17 @@ function calculate($num1, $num2, $operation) {
 // Main script
 echo "Simple Calculator\n";
 
-$num1 = getNumber("Enter first number: ");
-$operation = getOperation();
-$num2 = getNumber("Enter second number: ");
-$result = calculate($num1, $num2, $operation);
+do {
+    $num1 = getNumber("Enter first number: ");
+    $operation = getOperation();
+    $num2 = getNumber("Enter second number: ");
+    $result = calculate($num1, $num2, $operation);
 
-echo "Result: $result\n";
+    echo "Result: $result\n";
+
+    $continue = readline("Do you want to perform another calculation? (yes/no): ");
+} while (strtolower($continue) == "yes");
+
+echo "Thank you for using the calculator!\n";
 
 ?>
